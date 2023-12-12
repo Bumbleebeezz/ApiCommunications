@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Images\icon_bookshop.png" />
+    <None Remove="Images\SciFiLogo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Images\icon_bookshop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SciFiLogo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -24,6 +28,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Labb2_DbFirst\Labb2_DbFirst.csproj" />
   </ItemGroup>
 
 </Project>

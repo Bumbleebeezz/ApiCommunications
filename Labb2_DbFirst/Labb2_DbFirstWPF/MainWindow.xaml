@@ -5,26 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb2_DbFirstWPF"
         mc:Ignorable="d"
-        Title="Bee´z Book Shop" Height="450" Width="800">
+        Title="Book Shop" Height="450" Width="800" FontFamily="Yu Gothic Light">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <Image Source="Images/icon_bookshop.png" Margin="5"></Image>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="5">
-            <Button >Science Fiction Bokhandeln</Button>
-            <Button >Akademibokhandeln</Button>
-            <Button >Pocket Shop</Button>
-            <Button >Bokus</Button>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5">
+            <TextBlock Name="StoresTbx" HorizontalAlignment="Center" FontSize="15">Stores</TextBlock>
+            <Button Name="SciFiBtn" Margin="5" Click="SciFiBtn_OnClick">Science Fiction Bokhandeln</Button>
+            <Button Name="AkademiBtn" Margin="5">Akademibokhandeln</Button>
+            <Button Name="PocketShopBtn" Margin="5">Pocket Shop</Button>
+            <Button Name="BokusBtn" Margin="5">Bokus</Button>
         </StackPanel>
+        
+        <TextBox Name="LeftTb" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox Name="RightTb" Grid.Row="1" Grid.Column="2"></TextBox>
     </Grid>
 </Window>
