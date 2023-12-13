@@ -9,12 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\akademibokhandeln-logo.png" />
+    <None Remove="Images\bokus_logo.png" />
     <None Remove="Images\icon_bookshop.png" />
+    <None Remove="Images\pocketshop-logo.jpg" />
     <None Remove="Images\SciFiLogo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\akademibokhandeln-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bokus_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\icon_bookshop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pocketshop-logo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\SciFiLogo.jpg">

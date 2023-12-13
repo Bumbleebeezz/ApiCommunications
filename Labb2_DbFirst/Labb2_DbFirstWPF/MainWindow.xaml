@@ -15,22 +15,49 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Image Source="Images/icon_bookshop.png" Margin="5"></Image>
-
-        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5">
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Center" Margin="5">
             <TextBlock Name="StoresTbx" HorizontalAlignment="Center" FontSize="15">Stores</TextBlock>
-            <Button Name="SciFiBtn" Margin="5" Click="SciFiBtn_OnClick">Science Fiction Bokhandeln</Button>
-            <Button Name="AkademiBtn" Margin="5">Akademibokhandeln</Button>
-            <Button Name="PocketShopBtn" Margin="5">Pocket Shop</Button>
-            <Button Name="BokusBtn" Margin="5">Bokus</Button>
+            <Button Name="SciFiBtn" Margin="5" Click="SciFiBtn_OnClick">
+                <Image Source="Images/SciFiLogo.jpg"></Image>
+            </Button>
+            <Button Name="AkademiBtn" Margin="5">
+                <Image Source="Images/akademibokhandeln-logo.png"></Image>
+            </Button>
+            <Button Name="PocketShopBtn" Margin="5">
+                <Image Source="Images/pocketshop-logo.jpg"></Image>
+            </Button>
+            <Button Name="BokusBtn" Margin="5">
+                <Image Source="Images/bokus_logo.png"></Image>
+            </Button>
         </StackPanel>
-        
-        <TextBox Name="LeftTb" Grid.Row="1" Grid.Column="1"></TextBox>
-        <TextBox Name="RightTb" Grid.Row="1" Grid.Column="2"></TextBox>
+
+        <ListView
+            Name="CartList"
+            Grid.Row="1" 
+            Grid.Column="1"
+            Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="32" Height="32" Source="{Binding ProductImageSource }"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Product Name:" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price:" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Total}" Header="Total:" Width="70"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
     </Grid>
 </Window>

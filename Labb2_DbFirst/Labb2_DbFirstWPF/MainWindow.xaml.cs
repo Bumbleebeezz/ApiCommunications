@@ -33,8 +33,7 @@ namespace Labb2_DbFirstWPF
 
             foreach (var book in books)
             {
-                LeftTb.Text += book.Title;
-                LeftTb.Text += "\n";
+                
             }
         }
     }
