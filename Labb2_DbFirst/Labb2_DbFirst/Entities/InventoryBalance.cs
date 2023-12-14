@@ -8,12 +8,14 @@ public partial class InventoryBalance
     public int StoreId { get; set; }
 
     public string Isbn { get; set; } = null!;
+    public string Title { get; set; } = null!;
 
     public int AuthorId { get; set; }
 
     public int FormatId { get; set; }
 
-    public int? Quantity { get; set; }
+    public int? Quantity { get; set; } = null!;
+    public double Price { get; set; }
 
     public virtual Author Author { get; set; } = null!;
 

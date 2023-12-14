@@ -12,9 +12,6 @@ using Labb2_DbFirst.Entities;
 
 namespace Labb2_DbFirstWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -27,14 +24,29 @@ namespace Labb2_DbFirstWPF
         {
             var db = new Labb1BookShopContext();
 
-            var books = db.Books
-                .ToList()
-                .OrderBy(b => b.Price);
+            var books = db.InventoryBalances
+                
+                .Where(s=> s.StoreId == 1 );
 
             foreach (var book in books)
             {
-                
+                StoreLv.Items.Add(book);
             }
+        }
+
+        private void AkademiBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PocketShopBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BokusBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

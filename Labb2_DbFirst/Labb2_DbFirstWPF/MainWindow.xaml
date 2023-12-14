@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb2_DbFirstWPF"
         mc:Ignorable="d"
-        Title="Book Shop" Height="450" Width="800" FontFamily="Yu Gothic Light">
+        Title="Book Shop" Height="500" Width="1200" FontFamily="Yu Gothic Light">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -25,35 +25,26 @@
             <Button Name="SciFiBtn" Margin="5" Click="SciFiBtn_OnClick">
                 <Image Source="Images/SciFiLogo.jpg"></Image>
             </Button>
-            <Button Name="AkademiBtn" Margin="5">
+            <Button Name="AkademiBtn" Margin="5" Click="AkademiBtn_OnClick">
                 <Image Source="Images/akademibokhandeln-logo.png"></Image>
             </Button>
-            <Button Name="PocketShopBtn" Margin="5">
+            <Button Name="PocketShopBtn" Margin="5" Click="PocketShopBtn_OnClick">
                 <Image Source="Images/pocketshop-logo.jpg"></Image>
             </Button>
-            <Button Name="BokusBtn" Margin="5">
+            <Button Name="BokusBtn" Margin="5" Click="BokusBtn_OnClick">
                 <Image Source="Images/bokus_logo.png"></Image>
             </Button>
         </StackPanel>
 
         <ListView
-            Name="CartList"
+            Name="StoreLv"
             Grid.Row="1" 
-            Grid.Column="1"
-            Grid.ColumnSpan="2">
+            Grid.Column="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image Width="32" Height="32" Source="{Binding ProductImageSource }"></Image>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Product Name:" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price:" Width="70"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="70"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Total}" Header="Total:" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="auto"/>
                 </GridView>
             </ListView.View>
         </ListView>
