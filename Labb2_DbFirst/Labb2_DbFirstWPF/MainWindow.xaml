@@ -43,7 +43,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UnitPrice}" Header="Price:" Width="auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="auto"/>
                 </GridView>
             </ListView.View>

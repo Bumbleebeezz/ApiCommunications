@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Labb2_DbFirst.Entities;
+namespace Labb2_DbFirstWPF.Entities;
 
 public partial class InventoryBalance
 {
@@ -13,7 +13,7 @@ public partial class InventoryBalance
 
     public int FormatId { get; set; }
 
-    public int? Quantity { get; set; } = null!;
+    public int? Quantity { get; set; }
 
     public virtual Author Author { get; set; } = null!;
 

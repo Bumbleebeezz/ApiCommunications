@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -24,11 +25,11 @@ namespace Labb2_DbFirstWPF
         {
             var db = new Labb1BookShopContext();
 
-            var books = db.InventoryBalances
-                
-                .Where(s=> s.StoreId == 1 );
+            var storeInventory = db.InventoryBalances
+                .Where(s=> s.StoreId == 1)
+                .ToList();
 
-            foreach (var book in books)
+            foreach (var book in storeInventory)
             {
                 StoreLv.Items.Add(book);
             }
