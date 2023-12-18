@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb2_DbWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
         <StackPanel>
             <Button Name="ScienceFictionBokhandelnBtn" Click="ScienceFictionBokhandelnBtn_OnClick">Science Fiction Bokhandeln</Button>
@@ -24,11 +28,29 @@
             Grid.Column="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding UnitPrice}" Header="Price:" Width="auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="250"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UnitPrice}" Header="Price:" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalValue}" Header="Inventory value:" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <StackPanel Grid.Row="1">
+            <Button Name="UpdateBtn">Update</Button>
+            <Button Name="DeleteBtn">Delete</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox 
+                Name="BookTitleTextBox" 
+                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox 
+                Name="BookPriceTextBox" 
+                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox 
+                Name="BookQuantityTextBox" 
+                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
     </Grid>
 </Window>
