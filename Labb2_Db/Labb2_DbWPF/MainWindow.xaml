@@ -1,0 +1,34 @@
+﻿<Window x:Class="Labb2_DbWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labb2_DbWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button Name="ScienceFictionBokhandelnBtn" Click="ScienceFictionBokhandelnBtn_OnClick">Science Fiction Bokhandeln</Button>
+            <Button Name="AkademibokhandelnBtn" Click="AkademibokhandelnBtn_OnClick">Akademibokhandeln</Button>
+            <Button Name="PocketShopBtn" Click="PocketShopBtn_OnClick">Pocket Shop</Button>
+            <Button Name="BokusBtn" Click="BokusBtn_OnClick">Bokus</Button>
+        </StackPanel>
+        
+        <ListView 
+            Name="StoreLv"
+            Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UnitPrice}" Header="Price:" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

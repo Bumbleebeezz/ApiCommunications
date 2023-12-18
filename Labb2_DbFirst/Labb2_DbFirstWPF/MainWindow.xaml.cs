@@ -26,8 +26,8 @@ namespace Labb2_DbFirstWPF
             var db = new Labb1BookShopContext();
 
             var storeInventory = db.InventoryBalances
-                .Where(s=> s.StoreId == 1)
-                .ToList();
+                .ToList()
+                .Where(s => s.StoreId == 1);
 
             foreach (var book in storeInventory)
             {

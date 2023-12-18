@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb2_Db", "Labb2_Db\Labb2_Db.csproj", "{F57C74F6-11B8-43FF-85E5-D0CFAC2DE0FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb2_DbWPF", "Labb2_DbWPF\Labb2_DbWPF.csproj", "{0B2D2379-8E58-4891-ABCB-B999FA8FD61D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F57C74F6-11B8-43FF-85E5-D0CFAC2DE0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57C74F6-11B8-43FF-85E5-D0CFAC2DE0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57C74F6-11B8-43FF-85E5-D0CFAC2DE0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57C74F6-11B8-43FF-85E5-D0CFAC2DE0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2D2379-8E58-4891-ABCB-B999FA8FD61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2D2379-8E58-4891-ABCB-B999FA8FD61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2D2379-8E58-4891-ABCB-B999FA8FD61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2D2379-8E58-4891-ABCB-B999FA8FD61D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C839A1CE-06B3-4F46-916A-50F8DB62F4BE}
+	EndGlobalSection
+EndGlobal

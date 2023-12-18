@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labb2_DbFirst", "Labb2_DbFirst\Labb2_DbFirst.csproj", "{25A99031-D9CF-4859-84B6-FC2CDF2A459D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb2_DbFirstWPF", "Labb2_DbFirstWPF\Labb2_DbFirstWPF.csproj", "{BB9F323E-9299-4AAB-A64C-9CDE08BE9F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labb2_DbFirstWPF", "Labb2_DbFirstWPF\Labb2_DbFirstWPF.csproj", "{BB9F323E-9299-4AAB-A64C-9CDE08BE9F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
