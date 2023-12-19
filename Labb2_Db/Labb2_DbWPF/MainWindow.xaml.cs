@@ -29,7 +29,6 @@ namespace Labb2_DbWPF
 
         private void StoreInventoryManagerOnPropertyChanged()
         {
-            SelectedBook = _selectedBook;
         }
 
         private InventoryBalance? _selectedBook;
@@ -55,7 +54,6 @@ namespace Labb2_DbWPF
                     BookTitleTextBox.Text = _selectedBook.Title;
                     BookPriceTextBox.Text = _selectedBook.UnitPrice.ToString();
                     BookQuantityTextBox.Text = _selectedBook.Quantity.ToString();
-                    BookListChanged.Invoke();
                 }
             }
         }
