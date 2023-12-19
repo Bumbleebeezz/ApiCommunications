@@ -37,8 +37,8 @@
         </ListView>
 
         <StackPanel Grid.Row="1">
-            <Button Name="UpdateBtn">Update</Button>
-            <Button Name="DeleteBtn">Delete</Button>
+            <Button Name="UpdateBtn" Click="UpdateBtn_OnClick">Update</Button>
+            <Button Name="DeleteBtn" Click="DeleteBtn_OnClick">Delete</Button>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">

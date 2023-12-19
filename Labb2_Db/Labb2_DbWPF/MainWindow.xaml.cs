@@ -107,5 +107,15 @@ namespace Labb2_DbWPF
                 StoreLv.Items.Add(book);
             }
         }
+
+        private void UpdateBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DeleteBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
