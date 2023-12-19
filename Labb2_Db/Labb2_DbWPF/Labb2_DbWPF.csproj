@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Labb2_Db\Labb2_Db.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Managers\" />
+  </ItemGroup>
+
 </Project>

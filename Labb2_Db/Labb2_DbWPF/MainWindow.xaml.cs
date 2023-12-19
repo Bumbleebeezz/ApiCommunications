@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Labb2_Db.Entities;
+using Labb2_DbWPF.Managers;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Labb2_DbWPF
@@ -18,11 +19,17 @@ namespace Labb2_DbWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static event Action ProductListChanged;
+        public static event Action BookListChanged;
 
         public MainWindow()
         {
             InitializeComponent();
+            StoreInventoryManager.PropertyChanged += StoreInventoryManagerOnPropertyChanged;
+        }
+
+        private void StoreInventoryManagerOnPropertyChanged()
+        {
+            SelectedBook = _selectedBook;
         }
 
         private InventoryBalance? _selectedBook;
@@ -48,59 +55,38 @@ namespace Labb2_DbWPF
                     BookTitleTextBox.Text = _selectedBook.Title;
                     BookPriceTextBox.Text = _selectedBook.UnitPrice.ToString();
                     BookQuantityTextBox.Text = _selectedBook.Quantity.ToString();
+                    BookListChanged.Invoke();
                 }
             }
         }
 
         private void ScienceFictionBokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            StoreLv.Items.Clear();
-
-            var db = new Labb1BookShopContext();
-
-            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == 1).ToList();
-
-            foreach (var book in storeInventoryBalances)
-            {
-                StoreLv.Items.Add(book);
-            }
+            StoreListViewDisplay(1);
         }
 
         private void AkademibokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            StoreLv.Items.Clear();
-
-            var db = new Labb1BookShopContext();
-
-            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == 2).ToList();
-
-            foreach (var book in storeInventoryBalances)
-            {
-                StoreLv.Items.Add(book);
-            }
+            StoreListViewDisplay(2);
         }
 
         private void PocketShopBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            StoreLv.Items.Clear();
-
-            var db = new Labb1BookShopContext();
-
-            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == 3).ToList();
-
-            foreach (var book in storeInventoryBalances)
-            {
-                StoreLv.Items.Add(book);
-            }
+            StoreListViewDisplay(3);
         }
 
         private void BokusBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            StoreListViewDisplay(4);
+        }
+
+        private void StoreListViewDisplay(int storeID)
         {
             StoreLv.Items.Clear();
 
             var db = new Labb1BookShopContext();
 
-            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == 4).ToList();
+            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == storeID).ToList();
 
             foreach (var book in storeInventoryBalances)
             {

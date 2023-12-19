@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        d:DataContext="{d:DesignInstance local:MainWindow}"
         xmlns:local="clr-namespace:Labb2_DbWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
@@ -25,7 +26,10 @@
         
         <ListView 
             Name="StoreLv"
-            Grid.Column="1">
+            Grid.Column="1"
+            d:ItemsSource="{d:SampleData}"
+            ItemsSource="{Binding InventoryBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedItem="{Binding SelectedBook, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="250"/>
@@ -36,21 +40,25 @@
             </ListView.View>
         </ListView>
 
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            
+        </StackPanel>
+
         <StackPanel Grid.Row="1">
             <Button Name="UpdateBtn" Click="UpdateBtn_OnClick">Update</Button>
             <Button Name="DeleteBtn" Click="DeleteBtn_OnClick">Delete</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label>Title</Label>
             <TextBox 
                 Name="BookTitleTextBox" 
-                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Label>Price</Label>
             <TextBox 
                 Name="BookPriceTextBox" 
-                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Label>Quantity</Label>
             <TextBox 
                 Name="BookQuantityTextBox" 
-                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         </StackPanel>
     </Grid>
 </Window>
