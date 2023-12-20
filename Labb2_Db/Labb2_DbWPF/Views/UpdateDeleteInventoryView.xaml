@@ -7,6 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+
+        <StackPanel Grid.Row="1">
+            <Button Name="UpdateBtn" Click="UpdateBtn_OnClick">Update</Button>
+            <Button Name="DeleteBtn" Click="DeleteBtn_OnClick">Delete</Button>
+
+            <Label>Title</Label>
+            <TextBox 
+                Name="BookTitleTextBox" 
+                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Label>Price</Label>
+            <TextBox 
+                Name="BookPriceTextBox" 
+                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Label>Quantity</Label>
+            <TextBox 
+                Name="BookQuantityTextBox" 
+                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        </StackPanel>
+
     </Grid>
 </UserControl>

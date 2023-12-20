@@ -25,72 +25,24 @@ namespace Labb2_DbWPF
         {
             InitializeComponent();
             StoreInventoryManager.PropertyChanged += StoreInventoryManagerOnPropertyChanged;
+            StoreInventoryManager.ViewChanged += StoreInventoryManagerOnViewChanged;
+        }
+
+        private void StoreInventoryManagerOnViewChanged()
+        {
+            if (StoreInventoryManager.CurrentView == null)
+            {
+                store
+            }
         }
 
         private void StoreInventoryManagerOnPropertyChanged()
         {
         }
 
-        private InventoryBalance? _selectedBook;
+        
 
-        public InventoryBalance? SelectedBook
-        {
-            get
-            {
-                return _selectedBook;
-            }
-            set
-            {
-                if (_selectedBook == value) return;
-                _selectedBook = value;
-                if (value is null)
-                {
-                    BookTitleTextBox.Text = string.Empty;
-                    BookPriceTextBox.Text = string.Empty;
-                    BookQuantityTextBox.Text = string.Empty;
-                }
-                else
-                {
-                    BookTitleTextBox.Text = _selectedBook.Title;
-                    BookPriceTextBox.Text = _selectedBook.UnitPrice.ToString();
-                    BookQuantityTextBox.Text = _selectedBook.Quantity.ToString();
-                }
-            }
-        }
-
-        private void ScienceFictionBokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            StoreListViewDisplay(1);
-        }
-
-        private void AkademibokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            StoreListViewDisplay(2);
-        }
-
-        private void PocketShopBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            StoreListViewDisplay(3);
-        }
-
-        private void BokusBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            StoreListViewDisplay(4);
-        }
-
-        private void StoreListViewDisplay(int storeID)
-        {
-            StoreLv.Items.Clear();
-
-            var db = new Labb1BookShopContext();
-
-            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == storeID).ToList();
-
-            foreach (var book in storeInventoryBalances)
-            {
-                StoreLv.Items.Add(book);
-            }
-        }
+        
 
         private void UpdateBtn_OnClick(object sender, RoutedEventArgs e)
         {

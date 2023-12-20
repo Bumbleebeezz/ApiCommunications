@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labb2_Db.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,45 @@ using System.Windows.Shapes;
 
 namespace Labb2_DbWPF.Views
 {
-    /// <summary>
-    /// Interaction logic for StoreInventoryView.xaml
-    /// </summary>
     public partial class StoreInventoryView : UserControl
     {
         public StoreInventoryView()
         {
             InitializeComponent();
+        }
+
+        private void ScienceFictionBokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            StoreListViewDisplay(1);
+        }
+
+        private void AkademibokhandelnBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            StoreListViewDisplay(2);
+        }
+
+        private void PocketShopBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            StoreListViewDisplay(3);
+        }
+
+        private void BokusBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            StoreListViewDisplay(4);
+        }
+
+        private void StoreListViewDisplay(int storeID)
+        {
+            StoreLv.Items.Clear();
+
+            var db = new Labb1BookShopContext();
+
+            var storeInventoryBalances = db.InventoryBalances.Where(s => s.StoreId == storeID).ToList();
+
+            foreach (var book in storeInventoryBalances)
+            {
+                StoreLv.Items.Add(book);
+            }
         }
     }
 }
