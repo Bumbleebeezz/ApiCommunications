@@ -16,8 +16,11 @@
             <Label>ISBN</Label>
             <TextBox Name="ISBN_tbx"></TextBox>
             <Label>Format</Label>
-            <ComboBox ItemsSource="{Binding}"
-                      ></ComboBox>
+            <ComboBox 
+                ItemsSource="{Binding Formats}"
+                DisplayMemberPath="Name"
+                SelectedValuePath="{Binding Formats}"
+                SelectedValue="Name"></ComboBox>
             <Label>Author</Label>
             <TextBox Name="Author_tbx"></TextBox>
             <Label>Language</Label>

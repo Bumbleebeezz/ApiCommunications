@@ -24,7 +24,7 @@ public class StoreInventoryManager
         }
     }
 
-    public void AddBook(Book book, int quantity)
+    public void AddBook(Book book,string ISBN,  int quantity)
     {
         var bookFound = books.FirstOrDefault(b => b.Isbn == book.Isbn);
         if (bookFound is not null)
