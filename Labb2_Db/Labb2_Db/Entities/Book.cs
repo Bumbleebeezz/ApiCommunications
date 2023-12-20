@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Labb2_Db.Entities;
+﻿namespace Labb2_Db.Entities;
 
 public partial class Book
 {

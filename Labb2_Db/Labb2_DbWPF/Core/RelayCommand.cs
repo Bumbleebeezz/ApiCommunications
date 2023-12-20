@@ -1,6 +1,4 @@
 ﻿using System.Windows.Input;
-using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Labb2_DbWPF.ViewModels;
 

@@ -1,5 +1,4 @@
 ﻿using Labb2_DbWPF.ViewModels;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 namespace Labb2_DbWPF.Services;

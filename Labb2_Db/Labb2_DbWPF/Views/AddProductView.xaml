@@ -5,8 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Labb2_DbWPF.Views"
              mc:Ignorable="d" 
+             DataContext=""
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+         
+        
+        <StackPanel Grid.Column="1" Margin="10">
+            <Label>Store</Label>
+            <ComboBox Name="Store_cb"></ComboBox>
+            <Label>ISBN</Label>
+            <TextBox Name="ISBN_tbx"></TextBox>
+            <Label>Format</Label>
+            <ComboBox ItemsSource="{Binding}"
+                      ></ComboBox>
+            <Label>Author</Label>
+            <TextBox Name="Author_tbx"></TextBox>
+            <Label>Language</Label>
+            <TextBox Name="Language_tbx"></TextBox>
+            <Label>Genre</Label>
+            <ComboBox Name="Genre_cb"></ComboBox>
+            <Label>Price</Label>
+            <TextBox Name="Price_tbx"></TextBox>
+            <Label>Release</Label>
+            <DatePicker Name="Release_dp"></DatePicker>
+            <TextBlock Height="50"></TextBlock>
+            <Button Background="ForestGreen" VerticalAlignment="Bottom">Add product</Button>
+        </StackPanel>
+
+        
     </Grid>
 </UserControl>

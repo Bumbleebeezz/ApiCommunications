@@ -1,6 +1,4 @@
-﻿using System.Windows.Input;
-using System.Windows.Media.Converters;
-using Labb2_DbWPF.Services;
+﻿using Labb2_DbWPF.Services;
 
 namespace Labb2_DbWPF.ViewModels;
 

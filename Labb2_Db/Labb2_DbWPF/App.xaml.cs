@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using Labb2_DbWPF.Services;
 using Labb2_DbWPF.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
