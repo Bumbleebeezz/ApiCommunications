@@ -2,8 +2,23 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Labb2_DbWPF"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModels="clr-namespace:Labb2_DbWPF.ViewModels"
+             xmlns:views="clr-namespace:Labb2_DbWPF.Views">
     <Application.Resources>
-         
+         <DataTemplate DataType="{x:Type TypeName=viewModels:MainWindowViewModel}">
+            <local:MainWindow></local:MainWindow>
+         </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModels:MoveInventoryViewModel}">
+            <views:MoveInventoryView></views:MoveInventoryView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModels:StoreInventoryViewModel}">
+            <views:StoreInventoryView></views:StoreInventoryView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModels:UpdateDeleteInventoryViewModel}">
+            <views:UpdateDeleteInventoryView></views:UpdateDeleteInventoryView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModels:AddProductViewModel}">
+            <views:AddProductView></views:AddProductView>
+        </DataTemplate>
     </Application.Resources>
 </Application>

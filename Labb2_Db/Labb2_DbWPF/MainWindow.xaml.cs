@@ -32,7 +32,7 @@ namespace Labb2_DbWPF
         {
             if (StoreInventoryManager.CurrentView == null)
             {
-                store
+                
             }
         }
 
@@ -44,14 +44,6 @@ namespace Labb2_DbWPF
 
         
 
-        private void UpdateBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void DeleteBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -9,8 +9,8 @@
     <Grid>
 
         <StackPanel Grid.Row="1">
-            <Button Name="UpdateBtn" Click="UpdateBtn_OnClick">Update</Button>
-            <Button Name="DeleteBtn" Click="DeleteBtn_OnClick">Delete</Button>
+            <Button Name="UpdateBtn" >Update</Button>
+            <Button Name="DeleteBtn" >Delete</Button>
 
             <Label>Title</Label>
             <TextBox 

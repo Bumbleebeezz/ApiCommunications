@@ -6,10 +6,25 @@
         xmlns:local="clr-namespace:Labb2_DbWPF"
         d:DataContext="{d:DesignInstance local:MainWindow}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="500" Width="1000" FontSize="20" FontFamily="Yu Gothic">
     <Grid>
-        
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button Content="Store inventory"
+                    Command="{Binding NavigateToStoreInventoryCommand}"></Button>
+            <Button Content="Move inventory"
+                    Command="{Binding NavigateToMoveInventoryCommand}"></Button>
+            <Button Content="Add product"
+                    Command="{Binding NavigateToAddProductCommand}"></Button>
+            <Button Content="Update/Delete"
+                    Command="{Binding NavigateToUpdateDeleteProductCommand}"></Button>
+        </StackPanel>
+
+        <ContentControl Grid.Column="1" Content="{Binding Navigation.CurrentView}"></ContentControl>
     </Grid>
 
     
