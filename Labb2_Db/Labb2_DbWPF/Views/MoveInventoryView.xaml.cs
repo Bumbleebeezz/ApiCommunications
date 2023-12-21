@@ -1,13 +1,16 @@
-﻿using Labb2_Db.Entities;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Labb2_Db.Entities;
 using System.Windows;
 using System.Windows.Controls;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Labb2_DbWPF.Views
 {
     /// <summary>
     /// Interaction logic for MoveInventoryView.xaml
     /// </summary>
-    public partial class MoveInventoryView : UserControl
+    public partial class MoveInventoryView : UserControl, INotifyPropertyChanged
     {
         public MoveInventoryView()
         {
@@ -61,6 +64,21 @@ namespace Labb2_DbWPF.Views
             {
                 MoveInventory_lv.Items.Add(book);
             }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }
