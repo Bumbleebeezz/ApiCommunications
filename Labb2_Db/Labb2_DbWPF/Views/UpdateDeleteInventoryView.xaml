@@ -7,24 +7,73 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
-        <StackPanel>
-            <Button Name="UpdateBtn" >Update</Button>
-            <Button Name="DeleteBtn" >Delete</Button>
-
-            <Label>Title</Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+ 
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Margin="10">
+            <Label>Title:</Label>
             <TextBox 
-                Name="BookTitleTextBox" 
-                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-            <Label>Price</Label>
+                Name="BookTitleUpdate_tb" 
+                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label>Price:</Label>
             <TextBox 
-                Name="BookPriceTextBox" 
-                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-            <Label>Quantity</Label>
+                Name="BookPriceUpdate_tb" 
+                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <Label>Quantity:</Label>
             <TextBox 
-                Name="BookQuantityTextBox" 
-                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                Name="BookQuantityUpdate_tb" 
+                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label>Inventory value:</Label>
+            <TextBox 
+                Name="InventoryValueUpdate_tb" 
+                Text="{Binding InventoryValue, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="10">
+            <Button
+                Name="Update_btn"
+                Background="DarkOliveGreen">
+                Update
+            </Button>
+            <TextBlock></TextBlock>
+            <Button
+                Name="Remove_btn"
+                Background="Firebrick">
+                Remove
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <Button Name="ScienceFictionBokhandelnUpdate_btn" Click="ScienceFictionBokhandelnUpdate_btn_OnClick">Science Fiction Bokhandeln</Button>
+            <Button Name="AkademibokhandelnUpdate_btn" Click="AkademibokhandelnUpdate_btn_OnClick">Akademibokhandeln</Button>
+            <Button Name="PocketShopUpdate_btn" Click="PocketShopUpdate_btn_OnClick">Pocket Shop</Button>
+            <Button Name="BokusUpdate_btn" Click="BokusUpdate_btn_OnClick">Bokus</Button>
+
+        </StackPanel>
+
+        <ListView 
+            Name="UpdateStoreInventory_lv"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="10"
+            d:ItemsSource="{d:SampleData}"
+            ItemsSource="{Binding InventoryBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedItem="{Binding SelectedBook, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title:" Width="250"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UnitPrice}" Header="Price:" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity:" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalValue}" Header="Inventory value:" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>
