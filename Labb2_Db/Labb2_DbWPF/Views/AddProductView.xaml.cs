@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Labb2_DbWPF.Views
 {
@@ -10,6 +11,11 @@ namespace Labb2_DbWPF.Views
         public AddProductView()
         {
             InitializeComponent();
+        }
+
+        private void AddProduct_btn_OnClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Requested function not done");
         }
     }
 }

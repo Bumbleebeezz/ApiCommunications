@@ -32,7 +32,10 @@
             <Label>Release</Label>
             <DatePicker Name="Release_dp"></DatePicker>
             <TextBlock Height="50"></TextBlock>
-            <Button Background="ForestGreen" VerticalAlignment="Bottom">Add product</Button>
+            <Button 
+                Name="AddProduct_btn"
+                Background="ForestGreen"
+                Click="AddProduct_btn_OnClick">Add product</Button>
         </StackPanel>
 
         

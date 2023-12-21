@@ -13,7 +13,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Background="DarkCyan">
+        <StackPanel Background="SlateGray">
             <Button Content="Store inventory"
                     Command="{Binding NavigateToStoreInventoryCommand}"
                     Margin="10"></Button>
