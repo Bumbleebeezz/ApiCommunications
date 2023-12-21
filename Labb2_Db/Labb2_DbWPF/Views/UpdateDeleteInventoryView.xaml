@@ -20,19 +20,19 @@
             <Label>Title:</Label>
             <TextBox 
                 Name="BookTitleUpdate_tb" 
-                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label>Price:</Label>
             <TextBox 
                 Name="BookPriceUpdate_tb" 
-                Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding UnitPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label>Quantity:</Label>
             <TextBox 
                 Name="BookQuantityUpdate_tb" 
-                Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label>Inventory value:</Label>
             <TextBox 
                 Name="InventoryValueUpdate_tb" 
-                Text="{Binding InventoryValue, UpdateSourceTrigger=PropertyChanged}"/>
+                Text="{Binding InventoryValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="10">

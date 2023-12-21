@@ -13,16 +13,16 @@ namespace Labb2_DbWPF
         public MainWindow()
         {
             InitializeComponent();
-            StoreInventoryManager.PropertyChanged += StoreInventoryManagerOnPropertyChanged;
-            StoreInventoryManager.ViewChanged += StoreInventoryManagerOnViewChanged;
+            //StoreInventoryManager.PropertyChanged += StoreInventoryManagerOnPropertyChanged;
+            //StoreInventoryManager.ViewChanged += StoreInventoryManagerOnViewChanged;
         }
 
         private void StoreInventoryManagerOnViewChanged()
         {
-            if (StoreInventoryManager.CurrentView == null)
-            {
+            //if (StoreInventoryManager.CurrentView == null)
+            //{
                 
-            }
+            //}
         }
 
         private void StoreInventoryManagerOnPropertyChanged()

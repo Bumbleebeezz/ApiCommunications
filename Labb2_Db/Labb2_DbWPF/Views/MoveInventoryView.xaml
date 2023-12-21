@@ -54,7 +54,10 @@
 
         <StackPanel Grid.Column="2" Margin="10">
             <Label HorizontalAlignment="Center">----- TO STORE -----</Label>
-            <ComboBox Name="MoveToStore_cb"></ComboBox>
+            <ComboBox 
+                Name="MoveToStore_cb"
+                ItemsSource="{Binding Store}"
+                ></ComboBox>
             <TextBlock></TextBlock>
 
         </StackPanel>

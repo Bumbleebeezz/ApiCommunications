@@ -9,6 +9,7 @@ namespace Labb2_DbWPF.Views
         public StoreInventoryView()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void ScienceFictionBokhandelnBtn_OnClick(object sender, RoutedEventArgs e)

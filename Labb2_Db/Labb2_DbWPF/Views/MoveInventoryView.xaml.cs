@@ -15,6 +15,7 @@ namespace Labb2_DbWPF.Views
         public MoveInventoryView()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private Store _selectedProduct;
