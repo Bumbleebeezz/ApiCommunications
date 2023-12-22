@@ -2,7 +2,9 @@
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using Labb2_DbWPF.Managers;
+using Labb2_DbWPF.ViewModels;
 
 namespace Labb2_DbWPF.Views
 {
@@ -12,21 +14,20 @@ namespace Labb2_DbWPF.Views
     /// </summary>
     public partial class AddProductView : UserControl, INotifyPropertyChanged
     {
+
+
         public AddProductView()
         {
+            
             InitializeComponent();
-            DataContext = this;
             StoreComboBoxDisplay();
         }
 
-        private void StoreComboBoxDisplay()
+        private async void StoreComboBoxDisplay()
         {
-            var listOfStores = StoreInventoryManager.stores.Select(i => i.Name);
 
-            foreach (var storeName in listOfStores)
-            {
-                
-            }
+            
+
         }
 
         private void AddProduct_btn_OnClick(object sender, RoutedEventArgs e)

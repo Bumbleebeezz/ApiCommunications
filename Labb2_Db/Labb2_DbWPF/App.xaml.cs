@@ -1,6 +1,11 @@
-﻿using System.Windows;
+﻿using System.Reflection;
+using System.Windows;
+using Autofac;
+using Labb2_Db.Entities;
+using Labb2_DbWPF.Managers;
 using Labb2_DbWPF.Services;
 using Labb2_DbWPF.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Labb2_DbWPF
@@ -20,13 +25,21 @@ namespace Labb2_DbWPF
             {
                 DataContext = provider.GetRequiredService<MainWindowViewModel>()
             });
+
+            services.AddDbContext<Labb1BookShopContext>(options => {
+                options.UseSqlServer("Data Source=MARIACONFIG;Initial Catalog=Labb1_BookShop;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"); 
+            });
+
+            services.AddSingleton<StoreInventoryManager>();
+
             services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<AddProductViewModel>();
             services.AddSingleton<MoveInventoryViewModel>();
             services.AddSingleton<StoreInventoryViewModel>();
             services.AddSingleton<UpdateDeleteInventoryViewModel>();
             services.AddSingleton<INavigationService,NavigationService>();
-
+            services.AddSingleton<IStoreService, StoreService>();
+            
             services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
 
             _serviceProvider = services.BuildServiceProvider();
