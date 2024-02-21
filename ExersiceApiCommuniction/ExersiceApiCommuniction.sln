@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExersiceApiCommuniction.ApiOne", "ExersiceApiCommuniction.ApiOne\ExersiceApiCommuniction.ApiOne.csproj", "{75B2EDFB-F614-4840-AD34-C15D3A66DEAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExersiceApiCommuniction.ApiTwo", "ExersiceApiCommuniction.ApiTwo\ExersiceApiCommuniction.ApiTwo.csproj", "{C6D97665-4EDD-4BC8-B8D8-4B7E9628F23D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75B2EDFB-F614-4840-AD34-C15D3A66DEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B2EDFB-F614-4840-AD34-C15D3A66DEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B2EDFB-F614-4840-AD34-C15D3A66DEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B2EDFB-F614-4840-AD34-C15D3A66DEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D97665-4EDD-4BC8-B8D8-4B7E9628F23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D97665-4EDD-4BC8-B8D8-4B7E9628F23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D97665-4EDD-4BC8-B8D8-4B7E9628F23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D97665-4EDD-4BC8-B8D8-4B7E9628F23D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {676B5664-D57D-48F3-A672-89D11C48164E}
+	EndGlobalSection
+EndGlobal

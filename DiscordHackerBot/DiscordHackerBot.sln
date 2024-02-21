@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordHackerBot", "DiscordHackerBot\DiscordHackerBot.csproj", "{FF5C096A-8383-49CD-83AD-609AF5D844F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF5C096A-8383-49CD-83AD-609AF5D844F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5C096A-8383-49CD-83AD-609AF5D844F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5C096A-8383-49CD-83AD-609AF5D844F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5C096A-8383-49CD-83AD-609AF5D844F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2E51CE8-2536-4CEE-A62B-EF0CE7B042E7}
+	EndGlobalSection
+EndGlobal
